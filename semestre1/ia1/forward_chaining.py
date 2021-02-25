@@ -7,7 +7,7 @@ class Solver:
     """ Base de hechos, hechos inciales, BH """
     INITIAL_FACTS = {a,b,c} 
     """ Base de conocimiento, BC """
-    KNOWLEDGE_BASE = {}
+    KNOWLEDGE_BASE = set()
 
     def heuristic(self, conflict_set):
         """

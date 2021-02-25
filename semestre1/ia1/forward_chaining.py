@@ -37,12 +37,9 @@ class Solver:
 
     def forward_chaining(self):
         visited = set()
-        conflict_set = self.generate_conflict_set(
-            self.KNOWLEDGE_BASE, self.INITIAL_FACTS
-        )
         while(
-            not self.HYPOTESIS in self.KNOWLEDGE_BASE and
-            conflict_set and
+            not self.HYPOTESIS in self.KNOWLEDGE_BASE
+            and conflict_set
         ):
             """ Updates conflict set excluding visited rules """
             conflict_set = (

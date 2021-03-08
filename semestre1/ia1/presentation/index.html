@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	<style>
+		.make-it-pop {
+			filter: drop-shadow(0 0 10px purple);
+		}
+		.text-left {
+			text-align: left;
+			margin-left: 0;
+			margin-right: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<section>
+					<h2>Knowledgment Based Systems</h2>
+					<p>Jhon Edwin Sanz González & Juan Jose Vera Arango</p>
+				</section>
+				<section>
+					<h1>Credit experience</h1>
+					<p>Using Knowledgment Based Systems</p>
+				</section>
+			</section>
+			<section>
+				<section data-background-video="img/chambea.mp4" data-background-video-loop
+					data-background-video-muted>
+					<h2>💵 It's all about money 💵</h2>
+				</section>
+				<section>
+					<p>Credit experience is used to give you a <b>calification</b> to know if you are dependable</p>
+					<p class="fragment">and if true give you more money</p>
+					<p class="fragment">💰💰💰</p>
+				</section>
+				<section>
+					<p>There are several facts that make you dependable, grouped by 4 categories</p>
+					<br>
+					<div class="fragment">
+						<table>
+							<tr>
+								<th>Category</th>
+								<th>Label</th>
+							</tr>
+							<tr>
+								<td>Experience</td>
+								<td>exp_</td>
+							</tr>
+							<tr>
+								<td>Indebtedness</td>
+								<td>debt_</td>
+							</tr>
+							<tr>
+								<td>Portfolio status</td>
+								<td>stat_</td>
+							</tr>
+							<tr>
+								<td>Payment behaviour</td>
+								<td>habit_</td>	
+							</tr>
+						</table>
+					</div>
+				</section>
+				<section>
+					<h3>Facts</h3>
+					<pre><code class="hljs python3">
+	exp_years: int = 4
+	exp_open: int = 2
+	exp_prods: int = 6
+	exp_last_open: int = 2
+	debt_usage: float = 0
+	debt_fixed_loan: bool = False
+	debt_stable: bool = False
+	stat_open: int = 0
+	stat_mortgage: bool = True
+	stat_financial_com: int = 2
+	stat_codebtor: bool = True
+	habit_debt_30: bool = True
+	habit_debt_60: bool = False
+	habit_debt_balance: bool = False
+	habit_debt_prods: int = 1
+					</code></pre>
+				</section>
+				<section>
+					<p>So what we want to do is that, given your <b>current facts</b> we will tell you if you are <b>dependable</b> and give you money or not 👌</p>
+				</section>
+			</section>
+			<section
+				data-background-iframe="https://lucid.app/documents/embeddedchart/3bd93e40-8dfe-412c-bebb-80640bf9dc32"
+				data-background-interactive>
+				<div style="position: absolute; width: 20%; left: -100px; top: 500px; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+					<h5>MacDermott network</h5>
+				</div>
+			</section>
+			<section class="text-left">
+				<p>Following <b>Modus Ponens</b> and <b>Modus Tollendo Ponens</b> we had this answers:</p>
+				<p class="fragment" style="color: #1976d2;"><b>Modus Ponens</b></p>
+				<ul class="fragment">
+					<li>conflict set: {} </li>
+					<li>hypotesys: {} </li>
+				</ul>
+				<p class="fragment" style="color: #64dd17;"><b>Modus Tollendo Ponens</b></p>
+				<ul class="fragment">
+					<li>conflict set: {} </li>
+					<li>hypotesys: {} </li>
+				</ul>
+			</section>
+			<section>
+				<h2>😎 Thank You a lot 😎</h2>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		Reveal.initialize({
+			hash: true,
+			// backgroundTransition: 'zoom',
+			parallaxBackgroundHorizontal: 200,
+			parallaxBackgroundVertical: 50,
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+		Reveal.on('make-it-pop', () => {
+			console.log('✨');
+		});
+	</script>
+</body>
+
+</html>

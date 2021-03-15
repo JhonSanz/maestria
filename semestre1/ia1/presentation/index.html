@@ -22,6 +22,21 @@
 			margin-left: 0;
 			margin-right: 0;
 		}
+		.black {
+			color: black;
+		}
+		.board_position {
+			text-align: start;
+			position: absolute;
+			top: -310px;
+			font-size: 20px;
+		}
+		.board_position_right {
+			position: absolute;
+			top: -350px;
+			right: 100px;
+			font-size: 20px;
+		}
 	</style>
 </head>
 
@@ -107,6 +122,30 @@
 					<h5>MacDermott network</h5>
 				</div>
 			</section>
+			<section>
+				<section>
+					<h1>The algorithm</h1>
+				</section>
+				<section class="black" data-background-size="80%" data-background-image="img/mcdermott.png">
+					<p class="fragment fade-in-then-out board_position">Modus Ponens</p>
+					<p class="fragment fade-in-then-out board_position">
+						\[\begin{aligned}
+						initial\_facts = \left\{\\
+							exp\_years, exp\_prods,\\ stat\_mortgage,
+							habit\_debt\_balance\\ \right\}\
+							\end{aligned} \]
+						</p>
+					<p id="visited" class="fragment board_position_right">
+					</p>
+					<p class="fragment fade-in-then-out board_position">
+						\[\begin{aligned}
+						conflict\_set = \left\{
+							r1, r3, r4 \right\}\
+						\end{aligned} \]
+					</p>
+					<p class="fragment fade-in-then-out board_position">Winner Rx with certainty_factor Y</p>
+				</section>
+			</section>
 			<section class="text-left">
 				<p>Following <b>Modus Ponens</b> and <b>Modus Tollendo Ponens</b> we had this answers:</p>
 				<p class="fragment" style="color: #1976d2;"><b>Modus Ponens</b></p>
@@ -130,17 +169,28 @@
 	<script src="plugin/notes/notes.js"></script>
 	<script src="plugin/markdown/markdown.js"></script>
 	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/math/math.js"></script>
+
 	<script>
 		Reveal.initialize({
 			hash: true,
-			// backgroundTransition: 'zoom',
-			parallaxBackgroundHorizontal: 200,
-			parallaxBackgroundVertical: 50,
-			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+			math: {
+			mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+			config: 'TeX-AMS_HTML-full',
+			// pass other options into `MathJax.Hub.Config()`
+			TeX: { Macros: { RR: "{\\bf R}" }, displayAlign: "left" }
+			},
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath]
 		});
-		Reveal.on('make-it-pop', () => {
-			console.log('✨');
+		Reveal.on('fragmentshown', event => {
+			if (event.fragment.getAttribute("data-fragment-index") == 3) {
+				document.getElementById("visited").innerHTML = `visited = { R1 }`
+			}
 		});
+		Reveal.on('fragmenthidden', event => {
+			console.log(event.fragment.getAttribute("data-fragment-index"));
+		});
+
 	</script>
 </body>
 
